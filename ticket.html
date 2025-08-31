@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Ticket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./assets/images/logo-full.svg" alt="Logo" class="logo">
+        </header>
+        <main>
+            <section class="ticket-success">
+                <h2>Congrats, <span class="highlight">Jonatan Kristof</span>!<br>Your ticket is ready.</h2>
+                <p>
+                  We've emailed your ticket to<br>
+                  <span class="highlight-email">jonatan@email.com</span> and will send updates in the run up to the event.
+                </p>
+            </section>
+            <section class="ticket">
+                <div class="ticket-pattern-container">
+                    <img src="./assets/images/pattern-ticket.svg" alt="" class="pattern-ticket" aria-hidden="true">
+                    <div class="ticket-content">
+                        <div class="ticket-header">
+                            <img src="./assets/images/logo-full.svg" alt="Coding Conf" class="ticket-logo">
+                            <span class="event-title">Coding Conf</span>
+                        </div>
+                        <div class="event-date-location">Jan 31, 2025 / Austin, TX</div>
+                        <div class="ticket-user">
+                            <img class="avatar" src="./assets/images/avatar-placeholder.svg" alt="User Avatar">
+                            <div>
+                                <div class="name">Jonatan Kristof</div>
+                                <div class="github">@jonatankristof0101</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const data = JSON.parse(localStorage.getItem('ticketData') || '{}');
+        if (!data.name) return;
+
+        document.querySelector('.highlight').textContent = data.name;
+        document.querySelector('.highlight-email').textContent = data.email;
+        document.querySelector('.ticket-content .name').textContent = data.name;
+        document.querySelector('.ticket-content .github').textContent = '@' + data.github;
+        document.querySelector('.ticket-user .avatar').src = data.avatarUrl;
+      });
+    </script>
+</body>
+</html>

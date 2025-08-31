@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Conference ticket generator</title>
+ 
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="./assets/images/logo-full.svg" alt="Logo" class="logo">
+      <img src="./assets/images/pattern-circle.svg" alt="circle-pattern" class="circle-pattern">
+      <h1>Your Journey to coding Conf 2025 Starts Here!</h1>
+    </header>
+    <main>
+      <div class = "form-container">
+        <form id="ticket-form" autocomplete="off">
+          
+          <div class="form-group">
+            <label for="avatar">Avatar</label>
+            <label class="avatar-upload" tabindex="0">
+              <img id="avatar-preview" src="./assets/images/icon-upload.svg" alt="Avatar preview">
+              <span>Drag and drop or click it to upload</span>
+              <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" required>
+            </label>
+            <div class="form-hint">
+              <img id="info-icon" src="./assets/images/icon-info.svg" alt="Info icon">
+              Upload yout photo (JPG or PNG, max size: 500kb)
+            </div>
+            <div class="error-message" id="avatar-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+            <div class="error-message" id="name-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <div class="error-message" id="email-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="github">GitHub Username</label>
+            <input type="text" id="github" name="github" placeholder="Enter your GitHub username" required>
+            <div class="error-message" id="github-error"></div>
+          </div>
+
+          <button type="submit">Generate My Ticket</button>
+        </form>
+      </div>
+    </main>
+
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
