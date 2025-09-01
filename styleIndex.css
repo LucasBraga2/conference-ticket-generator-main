@@ -1,0 +1,129 @@
+/* styleIndex.css */
+body {
+  background: url('./assets/images/background-desktop.png') center/cover no-repeat;
+}
+
+@media (max-width: 600px) {
+  body {
+    background: url('./assets/images/background-mobile.png') center/cover no-repeat;
+  }
+}
+
+.form-container {
+
+  border-radius: var(--radius);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+  max-width: 520px;
+  margin: 3rem auto 2rem auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  min-width: 320px;
+  padding: 1.1rem 1.2rem;
+  border: 1.5px solid var(--neutral-300);
+  border-radius: 0.7rem;
+  font-size: 1.15rem;
+  font-family: var(--font-main);
+  background: var(--neutral-900);    /* cor igual ao fundo da página */
+  color: var(--neutral-0);           /* texto claro */
+  transition: border var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: var(--orange-500);
+  outline: none;
+  background: var(--neutral-900);
+  color: var(--neutral-0);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.avatar-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--neutral-900);
+  border: 2px dashed var(--neutral-500);  /* borda pontilhada */
+  border-radius: 0.7rem;
+  padding: 0.7rem 1rem;
+  min-height: 60px;
+  cursor: pointer;
+  transition: border-color var(--transition);
+  margin-bottom: 0.5rem;
+}
+
+.avatar-upload:hover,
+.avatar-upload:focus {
+  border-color: var(--orange-500);
+}
+
+.avatar-upload img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.7rem;
+}
+
+.avatar-upload span {
+  font-size: 1rem;
+  color: var(--neutral-700);
+}
+
+.form-hint {
+  font-size: 0.7rem;
+  color: var(--neutral-500);
+  margin-top: 0.2rem;
+}
+
+.error-message {
+  color: var(--orange-500);
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+button,
+input[type="submit"] {
+  background: linear-gradient(90deg, var(--orange-500), var(--orange-700));
+  color: var(--neutral-0);
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(7, 88, 67, 0.08);
+}
+
+button:hover,
+input[type="submit"]:hover,
+button:focus,
+input[type="submit"]:focus {
+  background: linear-gradient(90deg, var(--orange-700), var(--orange-500));
+  outline: 2px solid var(--orange-500);
+}

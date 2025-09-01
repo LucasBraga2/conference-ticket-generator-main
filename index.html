@@ -6,6 +6,11 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleIndex.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <title>Frontend Mentor | Conference ticket generator</title>
  
@@ -14,19 +19,26 @@
   <div class="container">
     <header>
       <img src="./assets/images/logo-full.svg" alt="Logo" class="logo">
-      <img src="./assets/images/pattern-circle.svg" alt="circle-pattern" class="circle-pattern">
-      <h1>Your Journey to coding Conf 2025 Starts Here!</h1>
+      <h1>Your Journey to coding Conf</h1>
+      <h1>2025 Starts Here!</h1>
+      <p>Secure you spot at next year's biggest coding conference.</p>
     </header>
     <main>
-      <div class = "form-container">
+        <!-- Patterns de fundo -->
+        <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="" class="pattern-squiggly-bottom" aria-hidden="true">
+        <img src="./assets/images/pattern-squiggly-line-top.svg" alt="" class="pattern-squiggly-top" aria-hidden="true">
+        <img src="./assets/images/pattern-lines.svg" alt="" class="pattern-lines" aria-hidden="true">
+        <!-- Pattern decorativo ao lado do campo Full Name -->
+        <img src="./assets/images/pattern-circle.svg" alt="" class="pattern-circle-fullname" aria-hidden="true">
+        <div class="form-container">
         <form id="ticket-form" autocomplete="off">
           
           <div class="form-group">
-            <label for="avatar">Avatar</label>
+            <label for="avatar">Upload Avatar</label>
             <label class="avatar-upload" tabindex="0">
               <img id="avatar-preview" src="./assets/images/icon-upload.svg" alt="Avatar preview">
               <span>Drag and drop or click it to upload</span>
-              <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" required>
+              <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
             </label>
             <div class="form-hint">
               <img id="info-icon" src="./assets/images/icon-info.svg" alt="Info icon">
