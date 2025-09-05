@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!name || !email || !github || !avatarInput.files[0]) {
         // alert('Preencha todos os campos e envie um avatar.');
         if (!avatarInput.files[0]) {
-          alert('Avatar é obrigatório.');
-          // document.getElementById('avatar-error').textContent = "Avatar é obrigatório.";
+          //alert('Avatar é obrigatório.');
+          document.getElementById('avatar-error').textContent = "Avatar é obrigatório.";
         }
         if (!name) {
           document.getElementById('name-error').textContent = "Nome é obrigatório.";
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
        const isFirstNameOnly = !name.includes(' ');
        if (isFirstNameOnly) {
          //alert('Digite nome e sobrenome');
-        //document.getElementById('name-error').textContent = "Digite nome e sobrenome";
+        document.getElementById('name-error').textContent = "Digite nome e sobrenome";
       //   // Exemplo toast:
        Toastify({ text: "Digite nome e sobrenome", duration: 3000, gravity: "top", position: "right", backgroundColor: "#ff4d4f" }).showToast();
        return;
@@ -94,14 +94,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // 5. Validar usuário do GitHub (deve começar com @)
       // if (!github.startsWith('@')) {
-       //  alert('Inclua o @ no seu usuário do GitHub');
-      //   // document.getElementById('github-error').textContent = "Inclua o @ no seu usuário do GitHub";
-      //   // Toastify({ text: "Inclua o @ no seu usuário do GitHub", duration: 3000, gravity: "top", position: "right", backgroundColor: "#ff4d4f" }).showToast();
-       //  return;
-    //   }
+         //alert('Inclua o @ no seu usuário do GitHub');
+       //document.getElementById('github-error').textContent = "Inclua o @ no seu usuário do GitHub";
+         // Toastify({ text: "Inclua o @ no seu usuário do GitHub", duration: 3000, gravity: "top", position: "right", backgroundColor: "#ff4d4f" }).showToast();
+       // return;
+     // }
 
       // 6. Adicionar "@" automaticamente se não escreveu
-       github = github.startsWith('@') ? github : '@' + github;
+      github = github.startsWith('@') ? github : '@' + github;
 
       // 7. Mostrar o GitHub sempre com um só "@"
       // github = '@' + github.replace(/^@+/, '');
@@ -109,8 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // 8. Validar e formatar o e-mail para minúsculas automaticamente
       //const emailFormatted = email.trim().toLowerCase();
 
-      // 9. Desabilitar o botão de submit enquanto houver erro
-      // (Exemplo: form.querySelector('button[type="submit"]').disabled = true;)
 
       // 10. Exemplo de toastify para qualquer erro
       Toastify({
@@ -121,9 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
         backgroundColor: "#ff4d4f"
       }).showToast();
 
-      // Lê o avatar como DataURL (base64)
-      const reader = new FileReader();
-      reader.onload = function(event) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
         avatarUrl = event.target.result;
 
         // Salva no localStorage
